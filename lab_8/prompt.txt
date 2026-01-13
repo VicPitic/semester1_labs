@@ -1,0 +1,37 @@
+
+Objectives
+ Work with Python classes
+ Develop a more complex application
+ Practice test-driven development
+ Practice feature-driven development
+Deadlines:
+ Iteration 1: Week 8
+ Iteration 2: Week 9
+ Iteration 3: Week 10
+General requirements
+ Use feature-driven development
+ Identify and plan features over 3 iterations, to be presented over three weeks
+ each week, a working version of your application must be presented
+ each version must have/be accompanied by:
+ tests - each function, outside of those in the UI, must be tested
+ specifications - each function, outside of those in the UI, must be specified
+ documentation: problem statement, feature list, iteration plan and for eachfeature: running scenario (following tabular model from lecture - Lecture 3, Lecture 7)
+ Use layered architecture (UI, Controller, Domain, Repository - concepts & examples inLecture 7)
+ Validate data: for invalid inputs, the application must print appropriate error messages; useexceptions
+
+The faculty stores information about:
+ Students: <student_id>, <name>
+ Courses: <course_id>, <name>, <professor>
+Create an application that allows:
+ Management of the list of students and the list of courses
+ Can add, delete and modify student and course
+ Can display all students, all courses
+ Can search for a student or a course
+ Assignment of grades for a given student and a given course - in addition to the grade, thedate the grade was assigned is also kept
+ Display reports:
+ For a given course, the list of all students and their grades, ordered:
+ Alphabetically by name
+ By grade
+ Top 3 most popular courses (i.e. courses with most students enrolled; a student is
+considered enrolled in a course if they have a grade assigned)
+ The top 20% students, ordered by their average grade across all courses: you shoulddisplay student name and their average grade

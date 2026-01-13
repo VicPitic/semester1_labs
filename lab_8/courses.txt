@@ -1,0 +1,11 @@
+101
+Matematica
+Prof. Vasile Cîrtoaje
+
+102
+Algoritmi Fundamentali
+Prof. Czibula Istvan
+
+103
+Algoritmi Matematica
+Prof. Hello World

@@ -1,0 +1,85 @@
+Objectives
+ Work with Python classes
+ Understand Python special methods
+ Practice exception handling
+ Practice TDD
+ Practice writing specifications
+
+For problem statements:
+ where possible, work with special (magic) methods
+ implement tests for all operations.  specify all the methods
+
+Implement a class MyString that behaves like a Python string but only allows lowercasecharacters, and, in contrast to Python's str, allows modifications like changing a character withinastring in place (i.e. MyString is mutable). Operations allowed:
+a. Creating a MyString instance
+i. a new string from a given sequence of characters
+ii. A string of n random characters, if the parameter initialize_with_random=True in __init__; n is a natural number between 1 and 10, possible characters
+are the characters of the English alphabet
+b. Access an element (a character) from a given position
+c. Modify (replace) an element (a character) from a given position
+d. Replace k number of occurrences of a substring with another in the string (in-place, does not
+return a new string)
+e. Insert a character at a specific position in the string; if position is greater than length of string, add at the end
+f. Remove all occurrences of a character in the string
+ has parameter start: integer representing position at which to start the search, default: 0
+ has parameter end: integer representing position at which to end the search, default: length of the string - 1
+ raises ValueError if character not in string
+g. Return the index of the first occurrence of a substring in the string, -1 otherwise
+h. Returning the length (number of characters) in the string
+
+Expected Output: 
+
+# Create a new empty MyString
+s = MyString('') #the string is empty
+# Create a new MyString from a given str
+s1 = MyString('abcd') #content is now: 'abcd'
+print(s1)
+#Example of displaying information
+#abcd
+#Character at position 0: a
+#Character at position 1: b
+#Character at position 2: c
+
+#Create a new MyString with random characters
+sr = MyString(initialize_with_random=True)
+# assume generated n = 4
+# and generated characters 'a', 'k', 'm', 'd'
+# content of string is: 'akmd'
+# Access and modify a character
+print(sr[2]) #'m' (character at index 2)
+sr[2] = 'x' #replace 'm' with 'x', content is now: 'akxd
+
+try:
+sr[1] = 'A' #Cannot add uppercase character
+except TypeError as e:
+print(e)
+try:
+sr[0] = '1' #Cannot add non-letter character
+except TypeError as e:
+print(e)
+# Insert a character
+sr.insert(1, 'z') #insert 'z' at index 1, content is now: 'azkxd'
+sr.insert(8, 'y') #insert 'y' at the end, since 8>5, content is now:
+'azkxdy'
+# Remove all occurrences of a character
+sr.remove_character('x') # remove 'x', content is now: 'azkdy'
+# Replace k occurrences of a substring
+s2 = MyString('abcabcabc')
+s2.replace('ab', 'xz', 2) # replace first 2 occurrences of 'ab' with
+'xy', content is now: 'xzcxzcabc'
+# Concatenation
+s3 = MyString('lm')
+s4 = sr + s3 #content of s4: 'azkdylm' (sr was 'azkdy')
+# Repetition
+s5 = sr * 2
+print(s5) #s5 is now: 'azkdyazkdy'
+# Rotate entire string
+#content of sr is now: 'azkdy'
+sr.rotate(2) #rotate right by 2 positions, content is now: 'dyazk'
+# Reverse a substring
+#content of sr is now: 'dyazk'
+sr.reverse_substring(0, 2) #reverse substring from index 0 to 2,
+#content is now: 'aydzk'
+# Sliding window of size 3
+#content is now: 'aydzk'
+#size = 3, overlap = 2
+windows = sr.sliding_window(3, 2) #['ayd', 'ydz', 'dzk']
