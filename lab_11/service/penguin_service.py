@@ -209,27 +209,31 @@ class PenguinService:
         # Measure execution time
         start_time = time.time()
 
-        # Insertion Sort - chosen based on surname letter matching
-        for i in range(1, n):
-            key = penguins[i]
-            key_value = key.get_attribute(attribute)
-            j = i - 1
+        # Selection Sort
+        for i in range(n - 1):
+            # Find the min/max element in remaining unsorted portion
+            extreme_idx = i
+            extreme_value = penguins[i].get_attribute(attribute)
 
-            if order == 'asc':
-                while j >= 0 and penguins[j].get_attribute(attribute) > key_value:
-                    penguins[j + 1] = penguins[j]
-                    j -= 1
-            else:  # desc
-                while j >= 0 and penguins[j].get_attribute(attribute) < key_value:
-                    penguins[j + 1] = penguins[j]
-                    j -= 1
+            for j in range(i + 1, n):
+                current_value = penguins[j].get_attribute(attribute)
+                if order == 'asc':
+                    if current_value < extreme_value:
+                        extreme_idx = j
+                        extreme_value = current_value
+                else:  # desc
+                    if current_value > extreme_value:
+                        extreme_idx = j
+                        extreme_value = current_value
 
-            penguins[j + 1] = key
+            # Swap if needed
+            if extreme_idx != i:
+                penguins[i], penguins[extreme_idx] = penguins[extreme_idx], penguins[i]
 
         execution_time = time.time() - start_time
 
         # Log performance
-        self._log_sort_performance(n, "InsertionSort", execution_time)
+        self._log_sort_performance(n, "SelectionSort", execution_time)
 
         # Update repository with sorted data
         self.__penguin_repo.set_penguins(penguins)

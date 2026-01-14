@@ -1,0 +1,23 @@
+# 1. Load data
+load penguins_data.csv
+
+# 2. Basic filtering
+filter species Adelie
+
+# 3. Statistical analysis
+describe body_mass_g
+
+# 4. Find unique values
+unique island
+
+# 5. Selection sort for letter "C"
+sort flipper_length_mm asc
+
+# 6. Data augmentation
+augment 50 duplicate
+
+# 7. Machine learning classification
+classify 39.5 17.4 186 5
+
+# 8. Visualization
+scatter flipper_length_mm body_mass_g

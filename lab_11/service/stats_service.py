@@ -4,7 +4,6 @@ Handles visualization and statistical plotting for penguin data
 """
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('TkAgg')  # Use TkAgg backend for display
 
 from domain.penguin import Penguin
 from domain.exceptions import (
