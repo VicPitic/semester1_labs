@@ -1,23 +1,68 @@
-# 1. Load data
+# 1. Print available data files
+print available_data
+
+# 2. Load data
 load penguins_data.csv
 
-# 2. Basic filtering
+# 3. Basic filtering
 filter species Adelie
 
-# 3. Statistical analysis
+# 4. Statistical analysis
 describe body_mass_g
 
-# 4. Find unique values
+# 5. Find unique values
 unique island
 
-# 5. Selection sort for letter "C"
+# 6. Unique values for species
+unique species
+
+# 7. Selection sort ascending
 sort flipper_length_mm asc
 
-# 6. Data augmentation
+# 8. Selection sort descending
+sort body_mass_g desc
+
+# 9. Data augmentation - duplicate
 augment 50 duplicate
 
-# 7. Machine learning classification
+# 10. Data augmentation - create new
+augment 30 create
+
+# 11. Save random penguins
+save_random 10 random_sample.csv
+
+# 12. Generate research groups
+generate research_groups 6
+
+# 13. Split into groups by mass threshold
+split_into_groups 10
+
+# 14. Machine learning classification
 classify 39.5 17.4 186 5
 
-# 8. Visualization
+# 15. Scatter plot visualization
 scatter flipper_length_mm body_mass_g
+
+# 16. Scatter plot - culmen dimensions
+scatter culmen_length_mm culmen_depth_mm
+
+# 17. Histogram
+hist body_mass_g 20
+
+# 18. Boxplot by island
+boxplot island body_mass_g
+
+# 19. Boxplot by species
+boxplot species flipper_length_mm
+
+# 20. Random penguin fact
+random_fact
+
+# 21. Draw penguin ASCII art
+draw_penguin
+
+# 22. Help menu
+help
+
+# 23. Quit application
+quit

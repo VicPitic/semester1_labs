@@ -1,6 +1,6 @@
 """
 Penguin Service
-Business logic for penguin data operations including filter, describe, unique, sort, augment
+logic for penguin data operations including filter, describe, unique, sort, augment
 """
 import random
 import time
@@ -184,9 +184,8 @@ class PenguinService:
     def sort_data(self, attribute: str, order: str) -> list:
         """
         Sort penguins by attribute using custom sorting algorithm
-        Uses Insertion Sort (based on name requirements)
         
-        Time Complexity: O(n^2) for Insertion Sort
+        Time Complexity: O(n^2) for Selection Sort
         Space Complexity: O(1) in-place sorting
         
         :param attribute: attribute to sort by
@@ -221,7 +220,7 @@ class PenguinService:
                     if current_value < extreme_value:
                         extreme_idx = j
                         extreme_value = current_value
-                else:  # desc
+                else: 
                     if current_value > extreme_value:
                         extreme_idx = j
                         extreme_value = current_value

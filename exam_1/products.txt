@@ -1,0 +1,3 @@
+102,Gala Apple,FreshFarm,40,1.5
+103,Smen Pear,RandFarm,50,1.5
+105,Hey Smen,RandoAuchan,100,1.5

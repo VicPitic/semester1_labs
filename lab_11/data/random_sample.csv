@@ -1,0 +1,11 @@
+species,flipper_length_mm,culmen_length_mm,culmen_depth_mm,body_mass_g,island,sex
+Adelie,185.0,34.0,17.1,3400.0,Dream,FEMALE
+Gentoo,220.0,45.0,15.4,5050.0,Biscoe,MALE
+Gentoo,221.0,46.2,14.9,5300.0,Biscoe,MALE
+Adelie,190.0,38.8,20.0,3950.0,Dream,MALE
+Gentoo,230.0,52.1,17.0,5550.0,Biscoe,MALE
+Adelie,196.0,39.2,21.1,4150.0,Dream,MALE
+Chinstrap,191.0,45.2,16.6,3250.0,Dream,FEMALE
+Chinstrap,202.0,43.5,18.1,3400.0,Dream,FEMALE
+Adelie,187.0,40.5,17.9,3200.0,Biscoe,FEMALE
+Gentoo,218.0,51.3,14.2,5300.0,Biscoe,MALE

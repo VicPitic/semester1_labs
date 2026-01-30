@@ -3,7 +3,6 @@ Statistics Service
 Handles visualization and statistical plotting for penguin data
 """
 import matplotlib.pyplot as plt
-import matplotlib
 
 from domain.penguin import Penguin
 from domain.exceptions import (
